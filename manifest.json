@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "Vacyoom",
+    "version": "0.1",
+    "description": "Destroys annoying Zoom launcher tabs on contact.",
+
+    "background": {
+        "scripts": [
+            "vacyoom.js"
+        ]
+    },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.zoom.us/j/*",
+                "*://*.zoom.us/s/*",
+                "*://*.zoom.us/postattendee*"
+            ],
+            "js": [
+                "vacyoom_content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ]
+}
